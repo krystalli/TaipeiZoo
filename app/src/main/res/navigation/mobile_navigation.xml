@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.krystal.taipeizoo.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_nav_home_to_nav_category"
+            app:destination="@id/nav_category" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_category"
+        android:name="com.krystal.taipeizoo.ui.area.AreaFragment"
+        tools:layout="@layout/fragment_area">
+
+        <action
+            android:id="@+id/action_nav_category_to_nav_home"
+            app:destination="@id/nav_home" />
+
+        <action
+            android:id="@+id/action_nav_category_to_nav_plant_detail"
+            app:destination="@id/nav_plant_detail" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_plant"
+        android:name="com.krystal.taipeizoo.ui.plant.PlantFragment"
+        android:label="@string/menu_plant"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_nav_plant_to_nav_plant_detail"
+            app:destination="@id/nav_plant_detail" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_plant_detail"
+        android:name="com.krystal.taipeizoo.ui.plant.detail.PlantDetailFragment"
+        tools:layout="@layout/fragment_area" />
+
+</navigation>

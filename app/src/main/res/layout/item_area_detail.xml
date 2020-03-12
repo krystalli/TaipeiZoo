@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/layout_bottom_border">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/image_category"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:actualImageScaleType="centerCrop"
+        app:failureImage="@drawable/img_paws_tilted"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:placeholderImage="@drawable/img_paws_tilted"
+        app:placeholderImageScaleType="centerInside"
+        app:viewAspectRatio="1.6" />
+
+    <TextView
+        android:id="@+id/text_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:letterSpacing="0.02"
+        android:lineSpacingExtra="4sp"
+        android:padding="16dp"
+        android:textColor="@color/grey_ff_22"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_category"
+        tools:text="臺灣動物區以臺灣原生動物與棲息環境為展示重點，佈置模擬動物原生棲地之生態環境，讓動物表現如野外般自然的生活習性，引導觀賞者更正確地認識本土野生動物。臺灣位處於亞熱帶，雨量充沛、氣候溫暖，擁有各種地形景觀，因而孕育了豐富龐雜的生物資源。" />
+
+    <TextView
+        android:id="@+id/text_memo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:letterSpacing="0.02"
+        android:lineSpacingExtra="4sp"
+        android:textColor="@color/grey_ff_22"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_description"
+        tools:text="每週一休館，入館門票：全票20元、優待票10元" />
+
+    <TextView
+        android:id="@+id/text_area"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:letterSpacing="0.02"
+        android:paddingTop="8dp"
+        android:paddingBottom="16dp"
+        android:textColor="@color/grey_ff_22"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_memo"
+        app:layout_goneMarginTop="0dp"
+        tools:text="戶外區" />
+
+    <TextView
+        android:id="@+id/text_link"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:letterSpacing="0.02"
+        android:padding="8dp"
+        android:text="@string/text_open_in_browser"
+        android:textColor="@color/blue_ff_00"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_memo"
+        app:layout_goneMarginTop="0dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

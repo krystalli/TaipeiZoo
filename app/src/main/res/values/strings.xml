@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Taipei Zoo</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">台北市立動物園</string>
+    <string name="menu_plant">植物資料</string>
+
+    <string name="home_title">台北市立動物園</string>
+    <string name="plant_title">植物資料</string>
+
+    <string name="text_open_in_browser">在網頁開啟</string>
+
+    <string name="plant_text_other_name">別名</string>
+    <string name="plant_text_description">簡介</string>
+    <string name="plant_text_feature">辨認方式</string>
+    <string name="plant_text_functionality">功能性</string>
+    <string name="plant_text_update_date">更新日期：%1$s</string>
+
+    <string name="category_title">%1$s｜%2$s</string>
+</resources>
