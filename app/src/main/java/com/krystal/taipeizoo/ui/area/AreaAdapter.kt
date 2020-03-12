@@ -8,6 +8,7 @@ import com.krystal.taipeizoo.model.Area
 import com.krystal.taipeizoo.model.PlantInfo
 import com.krystal.taipeizoo.ui.area.delegate.AreaDelegate
 import com.krystal.taipeizoo.ui.area.delegate.PlantDelegate
+import com.krystal.taipeizoo.ui.area.delegate.PlantInfoViewInfo
 import com.krystal.taipeizoo.ui.area.delegate.PlantTitleDelegate
 
 data class AnimalInfo(
@@ -18,7 +19,10 @@ data class AnimalInfo(
     @DrawableRes val resourceId: Int
 )
 
-class AreaAdapter(private val context: Context) : ListDelegationAdapter<List<Item<*>>>() {
+class AreaAdapter(
+    private val context: Context,
+    private val onPlantItemClickListener: (PlantInfo) -> Unit
+) : ListDelegationAdapter<List<Item<*>>>() {
 
     private var area: Area = Area.defaultInstance
     private var plantList: List<PlantInfo> = listOf()
@@ -50,7 +54,7 @@ class AreaAdapter(private val context: Context) : ListDelegationAdapter<List<Ite
             }
 
         val plantItems = plantList.map {
-            object : Item<PlantInfo>(it) {
+            object : Item<PlantInfoViewInfo>(PlantInfoViewInfo(it, onPlantItemClickListener)) {
                 override fun getViewType() = ViewType.PLANT
             }
         }

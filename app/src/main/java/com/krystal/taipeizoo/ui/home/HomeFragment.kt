@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.krystal.taipeizoo.R
 import com.krystal.taipeizoo.model.Area
@@ -30,8 +31,9 @@ class HomeFragment : Fragment(), HomeMvpView {
         super.onActivityCreated(savedInstanceState)
 
         with(recycler_view_category) {
-            layoutManager = LinearLayoutManager(context)
+            layoutManager = LinearLayoutManager(requireContext())
             adapter = homeAdapter
+            addItemDecoration(DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL))
         }
 
         homePresenter.viewReady()
@@ -39,8 +41,8 @@ class HomeFragment : Fragment(), HomeMvpView {
 
     private fun onAreaItemClick(area: Area) {
         val bundle = Bundle().apply { putParcelable(KEY_AREA, area) }
-        findNavController().navigate(R.id.action_nav_home_to_nav_category, bundle)
-}
+        findNavController().navigate(R.id.action_nav_home_to_nav_area, bundle)
+    }
 
     companion object {
         const val KEY_AREA = "KEY_AREA"

@@ -32,7 +32,7 @@ class PlantDetailFragment : Fragment() {
             addItemDecoration(
                 SpaceDividerItemDecoration(
                     mapOf(
-                        ViewType.IMAGE to 24,
+                        ViewType.IMAGE to 16,
                         ViewType.PLANT_DETAIL to 0
                     ),
                     0,

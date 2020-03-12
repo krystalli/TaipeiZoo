@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.krystal.taipeizoo.R
 import com.krystal.taipeizoo.model.PlantInfo
@@ -28,6 +29,7 @@ class PlantFragment : Fragment(), PlantMvpView {
         with(recycler_view_category) {
             layoutManager = LinearLayoutManager(context)
             adapter = plantAdapter
+            addItemDecoration(DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL))
         }
 
         plantPresenter.viewReady()

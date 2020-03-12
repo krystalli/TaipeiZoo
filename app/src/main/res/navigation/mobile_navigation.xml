@@ -12,22 +12,18 @@
         tools:layout="@layout/fragment_home">
 
         <action
-            android:id="@+id/action_nav_home_to_nav_category"
-            app:destination="@id/nav_category" />
+            android:id="@+id/action_nav_home_to_nav_area"
+            app:destination="@id/nav_area" />
 
     </fragment>
 
     <fragment
-        android:id="@+id/nav_category"
+        android:id="@+id/nav_area"
         android:name="com.krystal.taipeizoo.ui.area.AreaFragment"
         tools:layout="@layout/fragment_area">
 
         <action
-            android:id="@+id/action_nav_category_to_nav_home"
-            app:destination="@id/nav_home" />
-
-        <action
-            android:id="@+id/action_nav_category_to_nav_plant_detail"
+            android:id="@+id/action_nav_area_to_nav_plant_detail"
             app:destination="@id/nav_plant_detail" />
 
     </fragment>

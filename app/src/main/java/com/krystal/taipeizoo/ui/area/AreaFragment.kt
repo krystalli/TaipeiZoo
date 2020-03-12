@@ -6,18 +6,20 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.krystal.taipeizoo.R
 import com.krystal.taipeizoo.model.Area
 import com.krystal.taipeizoo.model.PlantInfo
 import com.krystal.taipeizoo.ui.home.HomeFragment.Companion.KEY_AREA
+import com.krystal.taipeizoo.ui.plant.PlantFragment.Companion.KEY_PLANT
 import com.krystal.taipeizoo.ui.util.SpaceDividerItemDecoration
 import kotlinx.android.synthetic.main.fragment_area.*
 
 class AreaFragment : Fragment(), AreaMvpView {
 
     private val areaPresenter by lazy { AreaPresenter(this) }
-    private val areaAdapter by lazy { AreaAdapter(requireContext()) }
+    private val areaAdapter by lazy { AreaAdapter(requireContext(), ::onPlantItemClickListener) }
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -36,7 +38,7 @@ class AreaFragment : Fragment(), AreaMvpView {
                     mapOf(
                         ViewType.AREA to 24,
                         ViewType.PLANT_TITLE to 0,
-                        ViewType.PLANT to 0
+                        ViewType.PLANT to 2
                     ),
                     0,
                     24
@@ -48,6 +50,11 @@ class AreaFragment : Fragment(), AreaMvpView {
         (activity as AppCompatActivity).supportActionBar?.title = area.name
 
         areaPresenter.viewReady(area)
+    }
+
+    private fun onPlantItemClickListener(plant: PlantInfo) {
+        val bundle = Bundle().apply { putParcelable(KEY_PLANT, plant) }
+        findNavController().navigate(R.id.action_nav_area_to_nav_plant_detail, bundle)
     }
 
     /***** MVP View methods implementation *****/
