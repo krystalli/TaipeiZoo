@@ -35,7 +35,7 @@
         app:layout_constraintEnd_toEndOf="@id/guideline_start"
         app:layout_constraintTop_toTopOf="parent"
         app:roundedCornerRadius="4dp"
-        app:viewAspectRatio="1"/> />
+        app:viewAspectRatio="1" />
 
     <TextView
         android:id="@+id/text_title"

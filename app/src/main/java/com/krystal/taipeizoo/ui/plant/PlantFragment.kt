@@ -9,6 +9,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.krystal.taipeizoo.R
+import com.krystal.taipeizoo.extension.hide
+import com.krystal.taipeizoo.extension.showOrHide
 import com.krystal.taipeizoo.model.PlantInfo
 import kotlinx.android.synthetic.main.fragment_home.*
 
@@ -47,7 +49,12 @@ class PlantFragment : Fragment(), PlantMvpView {
     /***** MVP View methods implementation *****/
 
     override fun updateData(plantList: List<PlantInfo>) {
-        loading_progress.visibility = View.GONE
+        loading_progress.hide()
         plantAdapter.updateData(plantList)
+    }
+
+    override fun showOrHideError(isShowed: Boolean) {
+        loading_progress.hide()
+        text_error.showOrHide(isShowed)
     }
 }

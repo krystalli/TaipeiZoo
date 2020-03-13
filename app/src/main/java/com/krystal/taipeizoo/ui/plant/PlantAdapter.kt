@@ -1,12 +1,10 @@
 package com.krystal.taipeizoo.ui.plant
 
-import androidx.annotation.DrawableRes
-import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import com.krystal.taipeizoo.R
 import com.krystal.taipeizoo.extension.showTextIfNotBlank
-import com.krystal.taipeizoo.model.Area
 import com.krystal.taipeizoo.model.PlantInfo
 import kotlinx.android.synthetic.main.item_area.view.*
 
@@ -21,8 +19,7 @@ class PlantAdapter(
     override fun getItemCount(): Int = plantList.size
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
-        val movieViewHolder = viewHolder as ViewHolder
-        viewHolder.bind(plantList[position], position, onItemClickListener)
+        viewHolder.bind(plantList[position], onItemClickListener)
     }
 
     fun updateData(plantList: List<PlantInfo>) {
@@ -33,7 +30,7 @@ class PlantAdapter(
     class ViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder(
         LayoutInflater.from(parent.context).inflate(R.layout.item_area, parent, false)
     ) {
-        fun bind(data: PlantInfo, position: Int, onItemClickListener: (PlantInfo) -> Unit) {
+        fun bind(data: PlantInfo, onItemClickListener: (PlantInfo) -> Unit) {
             with(itemView) {
                 setOnClickListener { onItemClickListener(data) }
 

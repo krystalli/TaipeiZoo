@@ -13,7 +13,11 @@
 
         <action
             android:id="@+id/action_nav_home_to_nav_area"
-            app:destination="@id/nav_area" />
+            app:destination="@id/nav_area"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
 
     </fragment>
 
@@ -24,7 +28,11 @@
 
         <action
             android:id="@+id/action_nav_area_to_nav_plant_detail"
-            app:destination="@id/nav_plant_detail" />
+            app:destination="@id/nav_plant_detail"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
 
     </fragment>
 
@@ -36,7 +44,11 @@
 
         <action
             android:id="@+id/action_nav_plant_to_nav_plant_detail"
-            app:destination="@id/nav_plant_detail" />
+            app:destination="@id/nav_plant_detail"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
 
     </fragment>
 

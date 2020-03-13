@@ -19,7 +19,7 @@ import kotlinx.android.synthetic.main.fragment_area.*
 class AreaFragment : Fragment(), AreaMvpView {
 
     private val areaPresenter by lazy { AreaPresenter(this) }
-    private val areaAdapter by lazy { AreaAdapter(requireContext(), ::onPlantItemClickListener) }
+    private val areaAdapter by lazy { AreaAdapter(::onPlantItemClickListener) }
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -46,7 +46,7 @@ class AreaFragment : Fragment(), AreaMvpView {
             )
         }
 
-        val area = arguments?.getParcelable<Area>(KEY_AREA) ?: Area.defaultInstance
+        val area = arguments?.getParcelable(KEY_AREA) ?: Area.defaultInstance
         (activity as AppCompatActivity).supportActionBar?.title = area.name
 
         areaPresenter.viewReady(area)

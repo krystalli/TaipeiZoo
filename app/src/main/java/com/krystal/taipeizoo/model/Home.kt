@@ -19,7 +19,7 @@ data class Category(
 @Parcelize
 data class Area(
     @SerializedName("E_no") val id: String,
-    @SerializedName("E_Category") val catrgory: String,
+    @SerializedName("E_Category") val category: String,
     @SerializedName("E_Name") val name: String,
     @SerializedName("E_Pic_URL") val imageUrl: String,
     @SerializedName("E_Info") val description: String,

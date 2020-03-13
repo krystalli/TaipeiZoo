@@ -4,16 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation
-import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.krystal.taipeizoo.R
+import com.krystal.taipeizoo.extension.hide
+import com.krystal.taipeizoo.extension.showOrHide
 import com.krystal.taipeizoo.model.Area
-import com.krystal.taipeizoo.model.Category
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment(), HomeMvpView {
@@ -51,7 +49,13 @@ class HomeFragment : Fragment(), HomeMvpView {
     /***** MVP View methods implementation *****/
 
     override fun updateData(areaList: List<Area>) {
-        loading_progress.visibility = View.GONE
+        loading_progress.hide()
         homeAdapter.updateData(areaList)
+        showOrHideError(false)
+    }
+
+    override fun showOrHideError(isShowed: Boolean) {
+        loading_progress.hide()
+        text_error.showOrHide(isShowed)
     }
 }

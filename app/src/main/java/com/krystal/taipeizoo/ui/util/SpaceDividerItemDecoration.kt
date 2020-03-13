@@ -16,26 +16,6 @@ class SpaceDividerItemDecoration : RecyclerView.ItemDecoration {
     private var dpMap: Map<Int, Int> = mapOf()
 
     constructor(
-            dpSpace: Int,
-            dpHeadSpace: Int = 0,
-            dpFootSpace: Int = 0,
-            isHorizontalLayout: Boolean = false,
-            isReverseLayout: Boolean = false
-    ) {
-        this.dpSpace = dpSpace
-        this.dpHeadSpace = dpHeadSpace
-        this.dpFootSpace = dpFootSpace
-        this.isHorizontalLayout = isHorizontalLayout
-        this.isReverseLayout = isReverseLayout
-    }
-
-    constructor(dpSpace: Int, isHorizontalLayout: Boolean, isReverseLayout: Boolean = false) {
-        this.dpSpace = dpSpace
-        this.isHorizontalLayout = isHorizontalLayout
-        this.isReverseLayout = isReverseLayout
-    }
-
-    constructor(
             dpMap: Map<Int, Int>,
             dpHeadSpace: Int = 0,
             dpFootSpace: Int = 0,

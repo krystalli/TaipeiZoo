@@ -2,10 +2,8 @@ package com.krystal.taipeizoo.retrofit
 
 import com.krystal.taipeizoo.model.CategoryData
 import com.krystal.taipeizoo.model.PlantData
-import com.krystal.taipeizoo.model.PlantInfo
 import io.reactivex.Observable
 import retrofit2.http.GET
-import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface ZooService {

@@ -14,6 +14,7 @@
     <string name="plant_title">植物資料</string>
 
     <string name="text_open_in_browser">在網頁開啟</string>
+    <string name="text_error">讀取資料失敗</string>
 
     <string name="plant_text_other_name">別名</string>
     <string name="plant_text_description">簡介</string>

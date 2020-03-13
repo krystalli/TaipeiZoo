@@ -1,9 +1,9 @@
 package com.krystal.taipeizoo.ui.plant.detail.delegate
 
-import android.view.ViewGroup
 import android.view.LayoutInflater
-import com.hannesdorfmann.adapterdelegates4.AbsListItemAdapterDelegate
+import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.hannesdorfmann.adapterdelegates4.AbsListItemAdapterDelegate
 import com.krystal.taipeizoo.R
 import com.krystal.taipeizoo.ui.plant.detail.Item
 import com.krystal.taipeizoo.ui.plant.detail.ViewType

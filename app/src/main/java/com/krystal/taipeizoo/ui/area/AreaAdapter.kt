@@ -1,7 +1,5 @@
 package com.krystal.taipeizoo.ui.area
 
-import android.content.Context
-import androidx.annotation.DrawableRes
 import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
 import com.krystal.taipeizoo.extension.plusIfValid
 import com.krystal.taipeizoo.model.Area
@@ -11,16 +9,7 @@ import com.krystal.taipeizoo.ui.area.delegate.PlantDelegate
 import com.krystal.taipeizoo.ui.area.delegate.PlantInfoViewInfo
 import com.krystal.taipeizoo.ui.area.delegate.PlantTitleDelegate
 
-data class AnimalInfo(
-    val id: Int,
-    val imageUrl: String,
-    val count: Int,
-    val date: String,
-    @DrawableRes val resourceId: Int
-)
-
 class AreaAdapter(
-    private val context: Context,
     private val onPlantItemClickListener: (PlantInfo) -> Unit
 ) : ListDelegationAdapter<List<Item<*>>>() {
 

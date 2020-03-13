@@ -36,7 +36,7 @@ class AreaDelegate : AbsListItemAdapterDelegate<Item<Area>, Item<*>, AreaDelegat
                 image_category.setImageURI(data.imageUrl)
                 text_description.showTextIfNotBlank(data.description)
                 text_memo.showTextIfNotBlank(data.memo)
-                text_area.showTextIfNotBlank(data.catrgory)
+                text_area.showTextIfNotBlank(data.category)
                 text_link.setOnClickListener { context.launchUrl(data.url) }
             }
         }
